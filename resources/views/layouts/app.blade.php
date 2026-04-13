@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: #23272f;">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand fw-bold fs-4" href="{{ route('home') }}">
                 <i class="fa-solid fa-code me-2"></i>Tech Web Company
@@ -39,7 +39,7 @@
                             href="{{ route('portfolio') }}">Portfolio</a>
                     </li>
                     <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <a class="btn btn-dark text-white fw-bold px-4 rounded-pill"
+                        <a class="btn btn-primary fw-bold px-4 rounded-pill"
                             href="{{ route('contact.create') }}">Contact</a>
                     </li>
                 </ul>
@@ -55,7 +55,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
-        @endif
+        </endif
 
         @if ($errors->any())
             <div class="container messages-container">
@@ -67,47 +67,6 @@
         @endif
 
         @yield('content')
-        <div class="container">
-
-            <!-- HERO -->
-            <div class="hero">
-                <h1>Tech Web Company</h1>
-                <p>Nous transformons vos idées en applications web modernes et performantes.</p>
-                <a href="{{ route('contact.create') }}" class="btn btn-light text-dark fw-bold">
-                    Demander un devis
-                </a>
-            </div>
-
-            <!-- SERVICES -->
-            <div class="row mt-5 g-4">
-
-                <div class="col-md-4">
-                    <div class="card-modern text-center">
-                        <i class="fa-solid fa-laptop-code fa-2x mb-3 text-primary"></i>
-                        <h5 class="fw-bold">Développement Web</h5>
-                        <p>Sites vitrines et e-commerce modernes et rapides.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card-modern text-center">
-                        <i class="fa-solid fa-gears fa-2x mb-3 text-primary"></i>
-                        <h5 class="fw-bold">Applications Web</h5>
-                        <p>Solutions sur mesure avec les dernières technologies.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card-modern text-center">
-                        <i class="fa-solid fa-cloud fa-2x mb-3 text-primary"></i>
-                        <h5 class="fw-bold">SaaS</h5>
-                        <p>Applications SaaS sécurisées et évolutives.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
     </main>
 
     <footer class="bg-dark text-white py-5 mt-auto">

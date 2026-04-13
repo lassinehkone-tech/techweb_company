@@ -5,14 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('scroll', function () {
             if (window.scrollY > 50) {
                 navbar.classList.add('shadow');
-                navbar.style.backgroundColor = 'rgba(13, 110, 253, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
-                navbar.style.setProperty('background-color', 'rgba(13, 110, 253, 0.95)', 'important');
+                navbar.classList.add('scrolled');
+                navbar.style.backdropFilter = 'blur(20px)';
             } else {
-                navbar.classList.remove('shadow');
-                navbar.style.backgroundColor = '#0d6efd';
-                navbar.style.backdropFilter = 'none';
-                navbar.style.setProperty('background-color', '#0d6efd', 'important');
+                navbar.classList.remove('scrolled');
+                navbar.style.backdropFilter = 'blur(20px)';
             }
         });
     }

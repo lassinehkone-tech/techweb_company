@@ -1,95 +1,219 @@
-/* GLOBAL */
+/* CSS Variables for Professional Theme */
+:root {
+    --primary: #1e40af;
+    --primary-light: #3b82f6;
+    --primary-dark: #1e3a8a;
+    --secondary: #64748b;
+    --accent: #10b981;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --border-radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #181a1b;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin: 0;
 }
 
-/* NAVBAR */
+/* NAVBAR - Clean & Glassmorphism */
 .navbar {
-    background: #181a1b !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-light);
 }
 
-.navbar .nav-link {
-    transition: 0.3s;
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: var(--shadow-md);
 }
 
-.navbar .nav-link:hover {
-    color: #f8cdda !important;
-}
-
-/* HERO SECTION */
-.hero {
-    margin-top: 100px;
-    padding: 100px 20px;
-    border-radius: 20px;
-    text-align: center;
-    color: white;
-    background: #23272f;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-.hero h1 {
-    font-size: 3rem;
+.navbar-brand {
     font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary) !important;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-top: 15px;
+.nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem !important;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+    margin: 0 0.25rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary) !important;
+    background: rgba(30, 64, 175, 0.1);
+    transform: translateY(-1px);
+}
+
+.navbar-toggler {
+    border: 1px solid var(--border-light);
+}
+
+/* HERO - Gradient Elegance */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #60a5fa 100%);
+    color: white;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"grain\" width=\"100\" height=\"100\" patternUnits=\"userSpaceOnUse\"><circle cx=\"25\" cy=\"25\" r=\"1\" fill=\"rgba(255,255,255,0.05)\"/><circle cx=\"75\" cy=\"75\" r=\"1.5\" fill=\"rgba(255,255,255,0.03)\"/><circle cx=\"50\" cy=\"10\" r=\"0.8\" fill=\"rgba(255,255,255,0.04)\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23grain)\"/></svg>');
+    pointer-events: none;
+}
+
+.hero h1,
+.hero .display-3 {
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero .lead {
+    font-size: 1.4rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
 }
 
 .hero .btn {
-    margin-top: 20px;
-    border-radius: 30px;
-    padding: 12px 25px;
+    padding: 16px 40px;
     font-weight: 600;
-}
-
-/* CARDS */
-.card-modern {
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow-lg);
     border: none;
-    border-radius: 20px;
-    padding: 30px;
-    transition: 0.3s;
-    background: #fff;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
 }
 
-.card-modern:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+.hero .btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), 0 20px 40px rgba(30, 64, 175, 0.3);
 }
 
-/* FOOTER */
-footer {
-    background: #0f2027;
+/* CARDS - Modern Clean */
+.card-modern,
+.hover-lift,
+.card {
+    border: none;
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.card-modern:hover,
+.hover-lift:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    background: rgba(30, 64, 175, 0.1);
+    border: 1px solid rgba(30, 64, 175, 0.2);
+}
+
+.bg-primary-soft {
+    background: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* FOOTER - Professional Dark */
+footer,
+footer .bg-dark {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    color: #cbd5e1;
+}
+
+.footer-link {
+    color: #94a3b8 !important;
+    transition: var(--transition);
 }
 
 .footer-link:hover {
-    color: #fff !important;
+    color: var(--primary-light) !important;
 }
 
-/* ALERT */
-.messages-container {
-    margin-top: 90px;
+/* CTA Section */
+.cta-section {
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
 }
 
-/* NAVBAR PERSONNALISÉE */
-.custom-navbar {
-    background: #181a1b !important;
-}
-
-/* BOUTONS */
-.btn-primary {
-    background: #23272f !important;
+/* ALERTS */
+.alert {
+    border-radius: var(--border-radius);
     border: none;
+    box-shadow: var(--shadow-sm);
 }
 
-.btn-primary:hover {
-    background: #434343 !important;
+.messages-container {
+    margin-top: 80px;
 }
 
-/* HERO BACKGROUND */
-.hero {
-    background: #23272f !important;
+/* UTILITIES */
+.section-bar {
+    width: 80px;
+    height: 4px;
+    margin: 1.5rem auto;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+.rounded-4 {
+    border-radius: 24px;
+}
+
+.icon-lg {
+    width: 72px;
+    height: 72px;
+    font-size: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
 }
