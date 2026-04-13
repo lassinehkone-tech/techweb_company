@@ -1,0 +1,95 @@
+/* GLOBAL */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #181a1b;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #181a1b !important;
+}
+
+.navbar .nav-link {
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: #f8cdda !important;
+}
+
+/* HERO SECTION */
+.hero {
+    margin-top: 100px;
+    padding: 100px 20px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    background: #23272f;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.hero .btn {
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-weight: 600;
+}
+
+/* CARDS */
+.card-modern {
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    transition: 0.3s;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* FOOTER */
+footer {
+    background: #0f2027;
+}
+
+.footer-link:hover {
+    color: #fff !important;
+}
+
+/* ALERT */
+.messages-container {
+    margin-top: 90px;
+}
+
+/* NAVBAR PERSONNALISÉE */
+.custom-navbar {
+    background: #181a1b !important;
+}
+
+/* BOUTONS */
+.btn-primary {
+    background: #23272f !important;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #434343 !important;
+}
+
+/* HERO BACKGROUND */
+.hero {
+    background: #23272f !important;
+}
